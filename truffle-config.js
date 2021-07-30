@@ -19,10 +19,11 @@
  */
 
 const HDWalletProvider = require('@truffle/hdwallet-provider');
-const infuraKey = "b1055cb82b2849aca7da981ed6aa89ef";
+const { mnemonic, etherscanApiKey, infuraKey } = require('./secrets.json');
 
-const fs = require('fs');
-const mnemonic = fs.readFileSync(".secret").toString().trim();
+
+// const fs = require('fs');
+// const mnemonic = fs.readFileSync(".secret").toString().trim();
 
 module.exports = {
   /**
@@ -100,7 +101,7 @@ module.exports = {
   ]
 ,
   api_keys: {
-    etherscan: 'W4PXRZSKIRG3XCQE8SN6J2RR4WI9BDQQ5U'
+    etherscan: etherscanApiKey
   }
 
   // Truffle DB is currently disabled by default; to enable it, change enabled: false to enabled: true
