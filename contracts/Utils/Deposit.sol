@@ -1,4 +1,4 @@
-// SPDX-License-Identifier: MIT
+//SPDX-License-Identifier: UNLICENSED
 pragma solidity >=0.8.0 <0.9.0;
 
 import "@openzeppelin/contracts/token/ERC20/IERC20.sol";
@@ -60,14 +60,5 @@ contract Deposit {
 
     function tokenBalance() public view returns (uint256) {
         return tokensDeposits[msg.sender];
-    }
-
-    function updateToken(address target, uint256 balance)
-        public
-        onlyOwner
-        returns (bool)
-    {
-        tokensDeposits[target] = balance;
-        return true;
     }
 }
